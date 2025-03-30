@@ -1,0 +1,11 @@
+.channel-search {
+    display: flex;
+    background: var(--background-secondary);
+    width: 310px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid var(--border-primary);
+    align-items: center;
+    padding: 0 10px;
+    justify-content: space-between;
+}

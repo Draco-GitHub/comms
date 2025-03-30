@@ -1,0 +1,15 @@
+.server-card {
+    display: flex;
+    margin: 5px 10px;
+    padding: 8px 10px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    background: var(--background-tertiary);
+}
+
+.server-card .icon {
+    height: 48px;
+    border-radius: 4px;
+    border: 1px solid white;
+}

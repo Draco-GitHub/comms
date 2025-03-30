@@ -1,0 +1,9 @@
+.servers-search {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-quaternary);
+    padding: 5px;
+    border-radius: 6px;
+}
