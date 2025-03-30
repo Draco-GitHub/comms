@@ -1,17 +1,18 @@
 import React, {useState} from "react";
 import ReactDOM from "react-dom/client";
-import "./styles/globals.css";
+import TitleBar from "./components/TitleBar.tsx";
+import ServersViewer from "./components/Servers/ServersViwer.tsx";
+import FriendsViewer from "./components/Friends/FriendsViwer.tsx";
+
 import "./styles/main.css";
-import Friends from "./Friends.tsx";
-import Servers from "./Servers.tsx";
-import TitleBar from "./TitleBar.tsx";
+import "./styles/temp.css"
 
 const App: React.FC = () => {
 
     const [currentPageID, setCurrentPageID] = useState<string>("Servers");
     const pages: Record<string, JSX.Element> = {
-        Friends:<Friends/>,
-        Servers:<Servers/>
+        Friends:<FriendsViewer/>,
+        Servers:<ServersViewer/>
     };
 
     return (
