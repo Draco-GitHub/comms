@@ -1,0 +1,59 @@
+.title-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 40px;
+    height: 40px;
+    position: relative;
+    -webkit-app-region: drag;
+}
+
+.title-bar-controls {
+    display: flex;
+    margin-left: 15px;
+    gap: 10px;
+}
+
+.title-bar-controls svg {
+    width: 24px;
+    height: 24px;
+}
+
+.title-bar-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.window-controls {
+    display: flex;
+    gap:2px;
+}
+
+.minimize, .maximize, .close {
+    display: flex;
+    width: 45px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.minimize:hover, .maximize:hover{
+    background: #383838;
+}
+
+.close:hover {
+    background: #C42B1C;
+}
+
+.minimize svg, .maximize svg, .close svg{
+    width: 15px;
+    height: 15px;
+}

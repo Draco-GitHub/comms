@@ -1,0 +1,72 @@
+.friends {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 10px;
+    gap: 10px
+}
+
+.friend {
+    display: flex;
+    min-height: 50px;
+    align-items: center;
+    background: var(--background-primary);
+    transition: background-color 0.2s;
+    border-radius: 10px;
+    padding-left: 10px;
+    gap: 10px;
+}
+
+.friend .icon, .friend .friend-info {
+    height: 32px;
+}
+
+.friend.selected {
+    background-color: #3a3a3a;
+}
+
+.left-nav .top-bar {
+    display: flex;
+    padding: 6px;
+}
+
+.friends-search {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-quaternary);
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.main-content .top-bar {
+    justify-content: space-between;
+}
+
+.main-content .top-bar .icon{
+    margin: 0 15px;
+    width: 30px;
+    height: 30px;
+}
+
+.friend-top-bar-info {
+    display: flex;
+    align-items: center;
+}
+
+.top-bar-controls {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    gap: 15px;
+}
+
+.top-bar-controls .icon-container {
+    width: 20px;
+}
+
+
+
+
+
