@@ -4,11 +4,12 @@ import UserArea from "../UserArea.tsx";
 
 import "./server.css"
 import Server from "./Server.tsx";
+import ResizeArea from "../ResizeArea.tsx";
 
 const ServersViewer= () => {
     const count = 50;
 
-    const userIds = Array.from({ length: count }, (_, index) => `user_${index + 1}`);
+    const userIds = Array.from({ length: count }, (_, index) => `server_${index + 1}`);
 
     const [currentChannel, setCurrentChannel] = useState<string>(userIds[0]);
 
@@ -21,7 +22,7 @@ const ServersViewer= () => {
             <div className="left-nav">
                 <div className="left-nav-header">
                     <div className="servers-search hoverable">
-                        Search for servers
+                        Search up servers
                     </div>
                 </div>
                 <div className="left-nav-items scroll-area">
@@ -31,6 +32,7 @@ const ServersViewer= () => {
                 </div>
                 <UserArea/>
             </div>
+            <ResizeArea/>
             <Server currentChannel={currentChannel}/>
         </div>
     );

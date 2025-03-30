@@ -1,12 +1,13 @@
 import Icon from "../Icon.tsx";
 import {SVGSettings} from "../../assets/Icons/index.tsx";
 import ChannelSearch from "../ChannelSearch.tsx";
+import TextChannel from "../TextChannel.tsx";
 
-interface ServerProps {
+interface FriendProps {
     currentChannel:string
 }
 
-const Server:React.FC<ServerProps> = ({currentChannel}) => {
+const Friend:React.FC<FriendProps> = ({currentChannel}) => {
     return (
         <div className="channel-view">
                 <div className="channel-header">
@@ -19,18 +20,9 @@ const Server:React.FC<ServerProps> = ({currentChannel}) => {
                         <ChannelSearch/>
                     </div>
                 </div>
-                <div className="communication-view">
-                    <div className="communication-pane">
-                        <div className="scroll-area">
-
-                        </div>
-                    </div>
-                    <div className="right-nav scroll-area">
-
-                    </div>
-                </div>
+                <TextChannel/>
             </div>
     )
 }
 
-export default Server;
+export default Friend;

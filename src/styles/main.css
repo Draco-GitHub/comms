@@ -19,29 +19,12 @@
     padding:10px;
 }
 
-.left-nav.hidden, .right-nav.hidden {
+.left-nav.hidden {
     width: 0;
     min-width: 0;
     opacity: 0;
     overflow: hidden;
-}
-
-.left-nav.hidden {
     transform: translateX(-350px);
-}
-
-.right-nav {
-    display: flex;
-    flex-direction: column;
-    width: 350px;
-    min-width: 350px;
-    transition: width 0.3s ease, transform 0.3s ease;
-    background: var(--background-tertiary);
-    border-left: 1px solid var(--border-primary)
-}
-
-.right-nav.hidden {
-    transform: translateX(350px);
 }
 
 .channel-view {
@@ -93,4 +76,25 @@
     display: flex;
     flex-grow:1;
     width: calc(100% - 350px);
+}
+
+.communication-view {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.text-chat {
+    display: flex;
+    flex-grow: 1;
+}
+
+.resize-area {
+    height: 100%;
+    width: 4px;
+}
+
+.resize-area:hover {
+    background: white;
+    cursor: ew-resize;
 }

@@ -2,8 +2,9 @@ import {useState} from "react";
 import FriendCard from "./FriendCard.tsx";
 import UserArea from "../UserArea.tsx";
 
-import Server from "./Friend.tsx";
 import "./friend.css"
+import ResizeArea from "../ResizeArea.tsx";
+import Friend from "./Friend.tsx";
 
 const ServerViewer= () => {
     const count = 50;
@@ -20,8 +21,8 @@ const ServerViewer= () => {
         <div className="content">
             <div className="left-nav">
                 <div className="left-nav-header">
-                    <div className="servers-search hoverable">
-                        Search for servers
+                    <div className="friends-search hoverable">
+                        Search up friends
                     </div>
                 </div>
                 <div className="left-nav-items scroll-area">
@@ -31,7 +32,8 @@ const ServerViewer= () => {
                 </div>
                 <UserArea/>
             </div>
-            <Server currentChannel={currentChannel}/>
+            <ResizeArea/>
+            <Friend currentChannel={currentChannel}/>
         </div>
     );
 }

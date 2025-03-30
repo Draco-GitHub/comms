@@ -4,7 +4,11 @@ import {Window} from "@tauri-apps/api/window"
 
 import "../styles/titlebar.css"
 
-const TitleBar = () => {
+interface TitleBarProps {
+    title:string
+}
+
+const TitleBar: React.FC<TitleBarProps> = ({title}) => {
 
     const win = Window.getCurrent()
 
@@ -14,7 +18,7 @@ const TitleBar = () => {
                 <DiscordIcon/>
                 <SVGContact/>
             </div>
-            <div className="title-bar-title">Friends</div>
+            <div className="title-bar-title">{title}</div>
             <div className="window-controls">
                 <SVGMinimize className="minimize" onClick={() => win.minimize()}/>
                 <SVGMaximize className="maximize" onClick={() => win.toggleMaximize()}/>

@@ -9,7 +9,7 @@ import "./styles/temp.css"
 
 const App: React.FC = () => {
 
-    const [currentPageID, setCurrentPageID] = useState<string>("Servers");
+    const [currentPageID, setCurrentPageID] = useState<string>("Friends");
     const pages: Record<string, JSX.Element> = {
         Friends:<FriendsViewer/>,
         Servers:<ServersViewer/>
@@ -17,7 +17,7 @@ const App: React.FC = () => {
 
     return (
         <React.StrictMode>
-            <TitleBar/>
+            <TitleBar title={currentPageID}/>
             {pages[currentPageID]}
         </React.StrictMode>
     );

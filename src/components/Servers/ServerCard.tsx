@@ -16,7 +16,7 @@ const ServerCard: React.FC<FriendChannelProps> = ({userId, isSelected, openChann
             onClick={() => openChannel(userId)}
         >
             <Icon src="https://cdn.discordapp.com/icons/1193841000108531764/70aab611c0cb684c9833b8e05b7ff046.webp?size=512"/>
-            <span>Friend {userId}</span>
+            <span>Server {userId}</span>
         </div>
     )
 }
