@@ -10,6 +10,10 @@
     background: var(--background-tertiary);
 }
 
+.server-card.selected {
+    background: #424242;
+}
+
 
 
 .server-card .icon {

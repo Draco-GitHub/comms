@@ -2,6 +2,10 @@ import "../styles/text-channel.css"
 import ResizeArea from "./ResizeArea"
 import { useRef, useState, ChangeEvent } from "react"
 
+interface TextChannelProps {
+    onChannelSearchClick: () => void,
+}
+
 const TextChannel = () => {
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -47,32 +51,16 @@ const TextChannel = () => {
             <div className="text-chat-area">
                 <div className="text-chat scroll-area">
                 </div>
-                <div 
-                    ref={inputAreaRef}
-                    className="text-input-area"
-                    style={{ height: 'auto', minHeight: '70px' }}
-                >
-                    <div 
-                        ref={containerRef}
-                        className="text-input-container" 
-                        onClick={handleContainerClick}
-                        style={{ minHeight: '38px', height: 'auto' }}
-                    >
+                <div  ref={inputAreaRef} className="text-input-area" style={{ height: 'auto', minHeight: '70px' }}>
+                    <div  ref={containerRef} className="text-input-container"  onClick={handleContainerClick} style={{ minHeight: '38px', height: 'auto' }}>
                         <textarea 
                             ref={textareaRef}
                             name="channel-text-input"
-                            id=""
+                            className="scroll-area"
                             value={text}
                             onChange={handleTextChange}
                             rows={1}
                             placeholder="Type a message..."
-                            style={{ 
-                                resize: "none",
-                                boxSizing: "border-box",
-                                width: "100%",
-                                overflow: "hidden",
-                                display: "block"
-                            }}
                         />
                     </div>
                 </div>

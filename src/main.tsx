@@ -9,7 +9,12 @@ import "./styles/temp.css"
 
 const App: React.FC = () => {
 
-    const [currentPageID, setCurrentPageID] = useState<string>("Friends");
+    const [currentPageID, setCurrentPageID] = useState<string>("Servers");
+
+    const handleOverlayChange = (node:React.FC) => {
+        
+    }
+
     const pages: Record<string, JSX.Element> = {
         Friends:<FriendsViewer/>,
         Servers:<ServersViewer/>

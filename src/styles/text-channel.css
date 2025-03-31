@@ -51,6 +51,8 @@
     caret-color: white;
     color: white;
     resize: none;
+    overflow: hidden;
+    display: block;
 }
 
 .text-input-area textarea:focus {

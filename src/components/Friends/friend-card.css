@@ -9,6 +9,10 @@
     height:42px;
 }
 
+.friend-card.selected {
+    background: #424242;
+}
+
 .friend-card-info {
     display: flex;
     flex-direction: column;

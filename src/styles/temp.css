@@ -73,6 +73,7 @@ html, body {
 .scroll-area:hover::-webkit-scrollbar-thumb {
     background: #3C3C3C;
     border-radius: 5px;
+    cursor: default
 }
 
 img:empty {

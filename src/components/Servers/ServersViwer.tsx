@@ -1,20 +1,26 @@
 import {useState} from "react";
 import ServerCard from "./ServerCard.tsx";
 import UserArea from "../UserArea.tsx";
+import ResizeArea from "../ResizeArea.tsx";
+import SVGSettings from "../../assets/Icons/SVGSettings.tsx";
+import ChannelSearch from "../ChannelSearch.tsx";
+import Icon from "../Icon.tsx";
+import TextChannel from "../TextChannel.tsx";
 
 import "./server.css"
-import Server from "./Server.tsx";
-import ResizeArea from "../ResizeArea.tsx";
 
-const ServersViewer= () => {
+
+const ServersViewer: React.FC<PageProps> = ({onChannelSearchClick}) => {
     const count = 50;
 
-    const userIds = Array.from({ length: count }, (_, index) => `server_${index + 1}`);
+    const serverIds = Array.from({ length: count }, (_, index) => `user_${index + 1}`);
+    const channelIds = Array.from({ length: count }, (_, index) => `user_${index + 1}`);
 
-    const [currentChannel, setCurrentChannel] = useState<string>(userIds[0]);
+    const [currentServer, setCurrentServer] = useState<string>(serverIds[0]);
+    const [currentChannel, setCurrentChannel] = useState<string>("# text-chat");
 
-    const handleChannel = (userId: string) => {
-        setCurrentChannel(userId);
+    const handleServerChange = (userId: string) => {
+        setCurrentServer(userId);
     }
 
     return (
@@ -25,15 +31,28 @@ const ServersViewer= () => {
                         Search up servers
                     </div>
                 </div>
-                <div className="left-nav-items scroll-area">
-                    {userIds.map((userId) => (
-                        <ServerCard key={userId} userId={userId} isSelected={currentChannel === userId} openChannel={handleChannel}/>
+                <div className="left-nav-items scroll-area">                
+                    {serverIds.map((serverId) => (
+                        <ServerCard key={serverId} userId={serverId} isSelected={currentServer === serverId} openChannel={handleServerChange}/>
                     ))}
                 </div>
                 <UserArea/>
             </div>
             <ResizeArea/>
-            <Server currentChannel={currentChannel}/>
+            <div className="channel-view">
+                <div className="channel-header">
+                    <div className="channel-info">
+                        <Icon src=""/>
+                        {currentServer && <span>{currentServer}</span>}
+                        <span>{currentChannel}</span>
+                    </div>
+                    <div className="channel-controls">
+                        <SVGSettings className="hoverable"/>
+                        <ChannelSearch onClick={onChannelSearchClick}/>
+                    </div>
+                </div>
+                <TextChannel/>
+            </div>
         </div>
     );
 }

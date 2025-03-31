@@ -1,20 +1,23 @@
 import {useState} from "react";
 import FriendCard from "./FriendCard.tsx";
 import UserArea from "../UserArea.tsx";
+import ResizeArea from "../ResizeArea.tsx";
+import SVGSettings from "../../assets/Icons/SVGSettings.tsx";
+import ChannelSearch from "../ChannelSearch.tsx";
+import Icon from "../Icon.tsx";
+import TextChannel from "../TextChannel.tsx";
 
 import "./friend.css"
-import ResizeArea from "../ResizeArea.tsx";
-import Friend from "./Friend.tsx";
 
-const ServerViewer= () => {
+const FriendsViewer: React.FC<PageProps> = ({onChannelSearchClick}) => {
     const count = 50;
+    
+    const friendIds = Array.from({ length: count }, (_, index) => `user_${index + 1}`);
 
-    const userIds = Array.from({ length: count }, (_, index) => `user_${index + 1}`);
+    const [currentFriend, setCurrentFriend] = useState<string>("# - text-chat");
 
-    const [currentChannel, setCurrentChannel] = useState<string>(userIds[0]);
-
-    const handleChannel = (userId: string) => {
-        setCurrentChannel(userId);
+    const handleServerChange = (userId: string) => {
+        setCurrentFriend(userId);
     }
 
     return (
@@ -26,16 +29,28 @@ const ServerViewer= () => {
                     </div>
                 </div>
                 <div className="left-nav-items scroll-area">
-                    {userIds.map((userId) => (
-                        <FriendCard key={userId} userId={userId} isSelected={currentChannel === userId} openChannel={handleChannel}/>
+                    {friendIds.map((friendId) => (
+                        <FriendCard key={friendId} userId={friendId} isSelected={currentFriend === friendId} openChannel={handleServerChange}/>
                     ))}
                 </div>
                 <UserArea/>
             </div>
             <ResizeArea/>
-            <Friend currentChannel={currentChannel}/>
+            <div className="channel-view">
+                <div className="channel-header">
+                    <div className="channel-info">
+                        <Icon src=""/>
+                        {currentFriend && <span>{currentFriend}</span>}
+                    </div>
+                    <div className="channel-controls">
+                        <SVGSettings className="hoverable"/>
+                        <ChannelSearch onClick={onChannelSearchClick}/>
+                    </div>
+                </div>
+                <TextChannel/>
+            </div>
         </div>
     );
 }
 
-export default ServerViewer;
+export default FriendsViewer;
