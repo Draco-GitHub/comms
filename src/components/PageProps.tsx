@@ -1,3 +1,0 @@
-interface PageProps {
-    onChannelSearchClick: () => void
-}

@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: gg sans, Noto Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    user-select: none;
+}
+
+html, body {
+    display: flex;
+    flex:1;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    background: var(--background-primary);
+    color: var(--font-primary);
+}
+
+:root {
+    --background-primary: #262626;
+    --background-secondary: #131313;
+    --font-primary: #f6f6f6;
+    --font-secondary: #f6f6f6;
+    --border-primary: #3C3C3C;
+    --title-bar-height: 36px;
+}
+
+.scroll-area {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.scroll-area::-webkit-scrollbar {
+    visibility:hidden;
+    width: 4px;
+}
+
+.scroll-area:hover::-webkit-scrollbar {
+    visibility:visible;
+}
+
+.scroll-area:hover::-webkit-scrollbar-thumb {
+    background: #3C3C3C;
+    border-radius: 5px;
+    cursor: default
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    flex:1 ;
+    background: var(--background-secondary);
+    overflow: hidden;
+}
+
+input, textarea {
+    flex:1;
+    background: inherit;
+    box-shadow: none;
+    border: none;
+    caret-color: white;
+    color: white;
+    resize: none;
+    overflow: hidden;
+    display: block;
+}
+
+input:focus, textarea:focus {
+    outline: none
+}
