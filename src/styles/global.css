@@ -9,26 +9,59 @@
 html, body {
     display: flex;
     flex:1;
-    height: 100%;
+    height: 100vh;
+    width: 100vw;
     margin: 0;
     padding: 0;
 }
 
 #root {
     display: flex;
+    flex-direction: row;
     flex:1;
-    flex-direction: column;
     background: var(--background-primary);
     color: var(--font-primary);
+    overflow: hidden;
 }
 
 :root {
-    --background-primary: #262626;
-    --background-secondary: #131313;
+    --background-primary: #131313;
+    --background-secondary: #262626;
     --font-primary: #f6f6f6;
     --font-secondary: #f6f6f6;
     --border-primary: #3C3C3C;
     --title-bar-height: 36px;
+}
+
+@keyframes smoothGlow {
+    0%{
+        box-shadow: 0 0 5px 2px #292929
+    }
+    50% {
+        box-shadow: 0 0 5px 2px rgba(29, 29, 29, 0);
+    }
+    100% {
+        box-shadow: 0 0 5px 2px #292929
+    }
+}
+
+.overlay {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+}
+
+.overlay-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+    background: #181818;
+    animation: smoothGlow 3s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 .scroll-area {
@@ -53,14 +86,12 @@ html, body {
 
 .content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex:1 ;
-    background: var(--background-secondary);
     overflow: hidden;
 }
 
 input, textarea {
-    flex:1;
     background: inherit;
     box-shadow: none;
     border: none;
@@ -69,6 +100,9 @@ input, textarea {
     resize: none;
     overflow: hidden;
     display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
 }
 
 input:focus, textarea:focus {

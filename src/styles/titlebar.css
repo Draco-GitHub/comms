@@ -5,7 +5,12 @@
     min-height: 30px;
     height: 30px;
     -webkit-app-region: drag;
-    background: #202020;
+}
+
+.window-controls {
+    display: flex;
+    height: 100%;
+    -webkit-app-region: no-drag;
 }
 
 .title-bar-controls {
@@ -16,11 +21,6 @@
 
 .title-bar-title {
     white-space: nowrap;
-}
-
-.window-controls {
-    display: flex;
-    height: 100%;
 }
 
 .window-controls .icon-wrapper:hover {

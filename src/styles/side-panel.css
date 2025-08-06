@@ -1,0 +1,40 @@
+.side-bar {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    justify-content: space-between;
+    padding: 15px 0 30px 15px;
+    border-right: 1px solid #2b2b2b;
+}
+
+.side-bar-top, .side-bar-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.side-bar-header {
+    display: flex;
+}
+
+.logo {
+    width: 200px;
+    height: 70px;
+}
+
+.icon-holder {
+    width: 50px;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 8px;
+}
+
+.side-bar-option {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}

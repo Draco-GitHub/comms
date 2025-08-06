@@ -1,0 +1,41 @@
+
+.tc-voice-box {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background: #131313;
+    border-radius: 4px;
+    width: 250px;
+    align-self: flex-end;
+    transition: height 2s;
+}
+
+.tc-voice-box-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 100%; /* Ensure full width of parent */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.tcv-control-box {
+    display: flex;
+    gap:5px;
+    background: #131313;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+.tcv-control {
+    display: flex;
+    gap: 1px;
+    flex-shrink: 0; /* Prevent the control from shrinking */
+}
+
+.tcv-control .icon-wrapper {
+    background:  #262626;
+    height: 40px;
+    width: 50px;
+    border-radius: 10px;
+}

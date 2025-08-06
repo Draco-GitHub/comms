@@ -1,0 +1,30 @@
+.global-search {
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    padding: 10px;
+    background: #0e0e0e;
+}
+
+.search-section {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    margin-top: 10px;
+}
+
+
+.list-item .selected {
+    background: #2b2b2b;
+}
+
+.list-item:hover {
+    background: #1c1c1c;
+}

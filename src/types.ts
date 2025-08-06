@@ -1,67 +1,42 @@
-export class User {
-    constructor(
-        public id: string,
-        public username: string,
-        public display_name: string,
-        public global_name: string,
-        public avatar: string,
-        public bot: boolean
-    ) {}
-}
-
 export class Channel {
     constructor(
-        public id: string,
         public display_name: string,
-        public type: number
+        public avatar_url: string,
+        public platform: platform,
+        public voice: boolean,
     ) {}
 }
 
-export class FriendChannel extends Channel {
+export class Contact extends Channel {
     constructor(
-        id: string,
-        display_name: string,
-        type: number,
-        public friend: User
-    ) {
-        super(id, display_name, type);
+        public display_name: string,
+        public avatar_url: string,
+        public platform: platform,
+        public status: status,
+
+        ) {
+        super(display_name, avatar_url, platform, true);
     }
 }
 
-export class GroupChannel extends Channel {
+export class Group extends Channel {
     constructor(
-        id: string,
-        display_name: string,
-        type: number,
-        public users: User[]
+        public display_name: string,
+        public avatar_url: string,
+        public platform: platform,
+        public members: Contact[]
     ) {
-        super(id, display_name, type);
-    }
-}
-
-export class Category {
-    constructor(
-        public id: string,
-        public name: string,
-        public channels: ServerChannel[],
-    ) {}
-}
-
-export class ServerChannel extends Channel {
-    constructor(
-        id: string,
-        display_name: string,
-        type: number,
-    ) {
-        super(id, display_name, type);
+        super(display_name,avatar_url,platform, true);
     }
 }
 
 export class Server {
     constructor(
-        public id: string,
-        public name: string,
-        public channel_list: (ServerChannel | Category)[]
+        public display_name: string,
+        public avatar_url: string,
+        public channels: Channel[]
     ) {}
 }
 
+export type platform = 'discord' | 'whatsapp' | 'messenger' | 'telegram' | 'signal';
+export type status = 'online' | 'offline' | 'away' | 'busy';

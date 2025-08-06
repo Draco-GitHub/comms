@@ -1,0 +1,67 @@
+
+.voice-chat-area {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background: #0e0e0e;
+}
+
+.users-area {
+    display: flex;
+    flex:1;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.users-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap:50px;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.v-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.v-control-box {
+    display: flex;
+    gap:5px;
+    background: #131313;
+    border-radius: 10px;
+    padding: 5px;
+    justify-content: space-between;
+}
+
+.v-control {
+    display: flex;
+    gap:1px
+}
+
+.v-control .icon-wrapper {
+    background:  #262626;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+}
+
+.v-control .left-control {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.v-control .right-control {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
